@@ -1,0 +1,269 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+  background: BLACK;
+}
+
+body{
+    font-family: "Microsoft JhengHei";
+    background-color: black;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+header {
+    padding: 40px 60px 0px;
+    color: white;
+    font-size: 35px;
+    font-weight: 550;
+}
+
+button{
+    margin: 10px 0px;
+    border: 2px solid rgba(255,255,255,.4); ;
+    font-family: sans-serif;
+    background-color: transparent;
+    color: white;
+    width:150px;
+    height:45px;
+    font-size:15px;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover{
+    background-color: rgba(255,255,255,.2);
+}
+
+/*上欄*/
+.nav-container{
+    background-color: rgba(0,0,0,.8);
+    opacity: 1;
+    height: 55px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+
+
+nav {
+    display: flex;
+    margin: 0;
+    height: 60px;
+    align-items: center;
+}
+
+nav .title1{
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    font-size: 25px;
+    font-weight: 550; 
+    color: white;
+    text-decoration: none;
+}
+
+nav .title2{
+    position: fixed;
+    top: 14px;
+    left: 145px;
+    font-size: 20px;
+    font-weight: 550;
+    color: white;
+    text-decoration: none;
+}
+
+/*右側清單*/
+.menu {
+    height: 25px;
+    position: fixed;
+    top: 15px;
+    right: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 3;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.menu:hover {
+	opacity: 0.8;
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.8s;
+}
+
+.change .line-1 {
+  transform: rotateZ(-45deg) translate(-8px, 4px);
+}
+
+.change .line-2 {
+  opacity: 0;
+}
+
+.change .line-3 {
+  transform: rotateZ(45deg) translate(-8px, -4px);
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    justify-content: start;
+    text-align: left;
+    position: fixed;
+    top: 55px;
+    left: 350px;
+    background: rgba(0,0,0,.8);
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    clip-path: polygon(82% 0%, 100% 0%, 100% 100%, 82% 100%);
+    transition: all 0.5s ease-out;
+}
+
+.nav-link {
+    position: relative ;
+    left: 83%;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 3px;
+}
+
+.nav-link a {
+    display: inline-block; 
+    padding: 1rem 0;
+    height: 55px;
+    width: 1136px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    background-color: rgba(255,255,255,.3);
+    left: 82.5%;
+    transition: all 0.5s ease-out;
+}
+
+.nav-list.open {
+    clip-path: polygon(82% 0%, 100% 0%, 100% 100%, 82% 100%);
+    top: 55px;
+    left: 0px;
+    transition: all 0.5s ease-out;
+}
+
+.footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 10px;
+    padding: 5px 0px;
+}
+
+/*淡入*/
+@keyframes fadein {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+/*內文*/
+.lesson-wrap{
+    position: relative;
+    background: rgba(0,0,0,.4); 
+    margin: auto;
+    top: 150px;
+    width: 75%;
+}
+.lesson-wrap .title{
+    padding: 60px 60px 0px;
+    color: white;
+    font-size: 28px;
+    font-weight: 550;
+}
+.lesson-wrap p{
+    padding: 25px 60px 0px;
+    font-family: system-ui;
+    color: white;
+    font-size: 20px;
+    font-weight: 5;
+    line-height: 2;
+    opacity: .95;
+}
+.lesson-wrap .pic {
+    display: flex;
+    padding: 25px 60px 0px;
+    height: 300px;
+    justify-content: space-around;
+}
+.lesson-wrap .pic-name {
+    display: flex;
+    padding: 0px 60px 0px;
+    height: 10px;
+    justify-content: space-around;
+}
+.lesson-wrap .pic-name p{
+    padding: 8px 117.5px 15px;
+	background-color: black;
+    font-size: 20px;
+    font-weight: 550;
+    line-height: 0;
+}
+.lesson-wrap .pic img{
+    transition: all 0.3s;
+}
+.lesson-wrap .pic img:hover{
+	transform: scale(1.03);
+}
+.lesson-wrap .btn{
+	display: flex;
+    padding: 60px 60px 0px;
+    height: 10px;
+    justify-content: space-between;
+}
+.lesson-wrap .btn button{
+    border-radius: 100%;
+	margin: 10px 0px;
+    border: 2px solid rgba(255,255,255,.4); ;
+    font-family: sans-serif;
+    background-color: transparent;
+    color: white;
+    width: 50px;
+    height: 50px;
+    font-size:15px;
+    opacity: 1;
+    transition: all 0.3s;
+}
+.lesson-wrap .btn button:hover{
+    background-color: rgba(255,255,255,.2);
+}
+.lesson-wrap .btn .leftBtn{
+    margin: 0px 0px 0px 16px;
+    width: 17px;
+    height: 17px;
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+    transform: rotate(-135deg);
+}
+.lesson-wrap .btn .rightBtn{
+    margin: 0px 0px 0px 10px;
+    width: 17px;
+    height: 17px;
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+    transform: rotate(45deg);
+}
