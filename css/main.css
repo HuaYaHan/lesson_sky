@@ -161,8 +161,6 @@ nav .title2{
 }
 
 .nav-list.open {
-    clip-path: polygon(82% 0%, 100% 0%, 100% 100%, 82% 100%);
-    top: 55px;
     left: 0px;
     transition: all 0.5s ease-out;
 }
