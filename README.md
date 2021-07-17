@@ -127,7 +127,7 @@ $(".ans1 .close").click(function(){
 ![帳號重複警示](https://i.imgur.com/JYJP6Xz.png)
 
 
-```php=
+```php
 $un = $_POST['username'];
 $pw1 = $_POST['password1'];
 $pw2 = $_POST['password2'];
@@ -151,7 +151,7 @@ else{
 * 當使用者兩次填寫的密碼不同時，一樣跳出警示視窗(如下圖)，並返回註冊頁面。
 ![兩次密碼錯誤](https://i.imgur.com/oTdX9nD.png)
 
-```php=
+```php
 //檢查兩次密碼是否一致
 if($pw1 != $pw2){
     echo '<script>alert("兩次密碼不一致，請重新填寫。"); location.href="../signup.php"</script>';
@@ -163,7 +163,7 @@ else{
 
 * 若帳號密碼皆無錯誤，則將使用者的資料寫入資料庫中，並直接切換為登入狀態，跳往首頁。
 ![註冊成功](https://i.imgur.com/9YRLFV3.png)
-```php=
+```php
 //資訊填寫無誤，將使用者資料添加進資料庫
 if($check1 == 1 && $check2 == 1){
     $pw = md5($pw1);  //密碼加密
@@ -193,7 +193,7 @@ if($check1 == 1 && $check2 == 1){
 ![登入頁面](https://i.imgur.com/oTWvRi8.jpg)
 
 登入資料一樣以表單方式處理，帳號密碼填寫完畢後點擊【登入】按鈕，表單數據會提交到 php 資料夾中的 "checkUser.php" 頁面，檢測帳號密碼是否正確:
-```htmlmixed=
+```html
 <form class="box" id="login_form" action="php/checkUser.php" method="post">
     <input type="text" name="username" id="username" placeholder="請輸入帳號" required>
     <input type="password" name="password" id="password" placeholder="請輸入密碼" required>
@@ -206,7 +206,7 @@ if($check1 == 1 && $check2 == 1){
 
 * 登入成功後則直接跳回首頁。
 
-```php=
+```php
 $un = $_POST['username'];
 $pw = $_POST['password'];
 $pw = md5($pw);  //密碼加密
@@ -235,7 +235,7 @@ else{
 ![尚未登入](https://i.imgur.com/YCrRJ5R.png)
 
 在課後測驗頁面中寫入 PHP ，驗證使用者是否已登入:
-```php=
+```php
 if(!isset($_SESSION['is_login']) || !$_SESSION['is_login']){
     echo "<script>alert('請先登入後再進行測驗!'); location.href='login.php';</script>";
 }
@@ -250,11 +250,11 @@ if(!isset($_SESSION['is_login']) || !$_SESSION['is_login']){
 ![成績](https://i.imgur.com/j58jWHF.png)
 
 * 【提交】按鈕HTML:
-```htmlmixed=
+```html
 <input type="button" value="提交" onclick="showDiv()">
 ```
 * JQuery顯示成績欄位:
-```javascript=
+```javascript
 const result = document.querySelector(".result");
 function showDiv(){
     result.style.display = "block";
@@ -263,7 +263,7 @@ function showDiv(){
 ```
 
 右下角有一個【GoTop】的按鈕，點擊後可直接上滑至網頁頂點，增加使用者在作答和修改答案時的便利性，用 JQuery 實現:
-```javascript=
+```javascript
 //回到頂點
 $(".jq-goTop").click(function (e) {
     e.preventDefault();
@@ -273,7 +273,7 @@ $(".jq-goTop").click(function (e) {
 });
 ```
 使用 scroll 函式，如果瀏覽器下滑超過 400px ，【GoTop】按鈕才會顯示，否則隱藏。
-```javascript=
+```javascript
 $(window).scroll(function () {
     if ($(window).scrollTop() < 400) {
         //按鈕隱藏
@@ -301,7 +301,7 @@ $(window).scroll(function () {
 ![登出](https://i.imgur.com/XUnc5sN.jpg)
 
 使用 PHP 完成登出:
-```php=
+```php
 <?php
 session_start();
 session_unset();
@@ -325,7 +325,7 @@ header('Location: ../index0.php');
 使用 PHP 來判斷是否登入，若使用者已登入，則自動跳換至 "index.php" 畫面; 若未登入，則跳至 "index.php"。
 
 "index0.php" PHP:
-```php=
+```php
 <?php
 session_start();
 require_once "php/db.php";
@@ -338,7 +338,7 @@ if(isset($_SESSION['is_login']) && $_SESSION['is_login']){
 ```
 
 "index.php" PHP:
-```php=
+```php
 <?php
 session_start();
 require_once "php/db.php";
