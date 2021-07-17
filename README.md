@@ -28,7 +28,7 @@
 
 ## 選單
 右上角為隱藏式選單，用 JQuery 和 CSS 實現:
-```javascript=
+```javascript
 $(document).ready(function(){
     $(".menu").click(function(){
         $(".nav-list").toggleClass("open");//選單開關
@@ -36,7 +36,7 @@ $(document).ready(function(){
     });
 });
 ```
-```css=
+```css
 /*預設隱藏選單*/
 .nav-list {
     display: flex;
@@ -91,7 +91,7 @@ $(document).ready(function(){
 
 
 * JQuery:
-```javascript=
+```javascript
 //當答案按鈕被點擊時，答案框fadeIn
 $(".a1").click(function(){
     $(".ans1").fadeIn();
@@ -113,7 +113,7 @@ $(".ans1 .close").click(function(){
 
 
 註冊資料以表單方式處理，資料填寫完畢並點擊【註冊】按鈕後，表單數據會提交到 php 資料夾中的 "addUser.php" 頁面:
-```htmlembedded=
+```htmlembedded
 <form class="box" id="login_form" action="php/addUser.php" method="post">
     <input type="text" name="username" id="username" placeholder="請輸入帳號" required>
     <input type="password" name="password1" id="password1" placeholder="請輸入密碼" required>
