@@ -113,7 +113,7 @@ $(".ans1 .close").click(function(){
 
 
 註冊資料以表單方式處理，資料填寫完畢並點擊【註冊】按鈕後，表單數據會提交到 php 資料夾中的 "addUser.php" 頁面:
-```htmlembedded
+```html
 <form class="box" id="login_form" action="php/addUser.php" method="post">
     <input type="text" name="username" id="username" placeholder="請輸入帳號" required>
     <input type="password" name="password1" id="password1" placeholder="請輸入密碼" required>
